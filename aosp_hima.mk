@@ -1,12 +1,9 @@
 $(call inherit-product, device/htc/himaul/full_himaul.mk)
 
-# Inherit some common SLIM stuff.
-$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
-
-PRODUCT_NAME := slim_himaul
+PRODUCT_NAME := aosp_himaul
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="htc_himaulatt" \
